@@ -8,26 +8,66 @@
 #include <Servo.h>
 
 Servo myServo;
-int pinNum = 7;
 
-void setup() {
-	//pinMode(pinNum, OUTPUT);
-	myServo.attach(pinNum);
-	//Serial.begin(9600);
+//int rotate_Angle;
+//
+//int pinNum = 7;
+//int rotate_Speed = 100;
+//
+//void setup() {
+//	//pinMode(pinNum, OUTPUT);
+//	myServo.attach(pinNum);
+//	Serial.begin(9600);
+//	rotate_Angle = 90;
+//	myServo.write(rotate_Angle);
+//}
+//void loop() {
+//
+//	if (Serial.available)
+//	{
+//		if (Serial.read() == 97) // 아스키(d)
+//		{
+//			rotate(false);
+//		}
+//		if (Serial.read() == 100) // 아스키(a)
+//		{
+//			rotate(true);
+//		}
+//	}
+//}
+//
+//void rotate(boolean r_value)
+//{
+//	// RIGHT
+//	if (r_value) 
+//	{
+//		myServo.write(rotate_Angle + 1);
+//		delay(rotate_Speed);
+//	}
+//	//LEFT
+//	else { 
+//		myServo.write(rotate_Angle - 1);
+//		delay(rotate_Speed);
+//	}
+//}
 
+
+const int potentiometerPin = 0; //가변저항기에 연결한 아날로그의 핀
+
+Servo myServo;
+
+void setup()
+{
+	myServo.attach(9); // 서보를 사용하는 핀
 }
 
-// the loop function runs over and over again until power down or reset
-void loop() {
-	/*if (Serial.available())
-	{
+void loop()
+{
+	int value = analogRead(potentiometerPin); // 가변저항의 값
 
-  }*/
-	myServo.write(0);
-	delay(1000);
-	myServo.write(90);
-	delay(1000);
-	myServo.write(0);
-	delay(10000);
-	myServo.write(180);
+	// map(value, 현재 최소값, 현재 최대값, 변경하고자 하는 최소 값, 변경하고자 하는 최대값)
+	int angle = map(value, 0, 1023, 0, 179); // 읽어들인 값을 0에서 179까지 변환   
+
+	myServo.write(angle);
+	delay(15);
 }
