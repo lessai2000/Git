@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Bluetooth", "Bluetooth\Blue
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Servo", "Servo\Servo.vcxproj", "{367755CD-909F-4AAD-A23A-3997EF17ED77}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DC", "DC\DC.vcxproj", "{0AFEFFBE-0DE6-4262-A4E0-EE77A47B0041}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -21,6 +23,10 @@ Global
 		{367755CD-909F-4AAD-A23A-3997EF17ED77}.Debug|x86.Build.0 = Debug|Win32
 		{367755CD-909F-4AAD-A23A-3997EF17ED77}.Release|x86.ActiveCfg = Release|Win32
 		{367755CD-909F-4AAD-A23A-3997EF17ED77}.Release|x86.Build.0 = Release|Win32
+		{0AFEFFBE-0DE6-4262-A4E0-EE77A47B0041}.Debug|x86.ActiveCfg = Debug|Win32
+		{0AFEFFBE-0DE6-4262-A4E0-EE77A47B0041}.Debug|x86.Build.0 = Debug|Win32
+		{0AFEFFBE-0DE6-4262-A4E0-EE77A47B0041}.Release|x86.ActiveCfg = Release|Win32
+		{0AFEFFBE-0DE6-4262-A4E0-EE77A47B0041}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
