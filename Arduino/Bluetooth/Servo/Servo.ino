@@ -9,22 +9,22 @@
 
 Servo myServo;
 
-const int servo_APin = 0; //가변저항기에 연결한 아날로그의 핀
-const int servo_DPin = 9;
-const int DC_APin = 1;
-const int DC_DPin = 11;
+const int servo_APin = 0;	//Servo motor connetion potentiometer Pin number
+const int servo_DPin = 9;	//Servo motor Pin number
+const int DC_APin = 1;		//DC motor connetion potentiometer Pin number
+const int DC_DPin = 11;		//DC motor Pin number
 
 void setup()
 {
-	myServo.attach(9); // 서보를 사용하는 핀
-	pinMode(DC_APin, INPUT);
+	myServo.attach(servo_DPin); 
+	pinMode(DC_APin, INPUT);	
 	pinMode(DC_DPin, OUTPUT);
 }
 
 void loop()
 {
-	servo_control(analogRead(servo_APin)); // 가변저항의 값
-	DC_control(analogRead(DC_APin));
+	servo_control(analogRead(servo_APin));	// Servo motor potentiometer
+	DC_control(analogRead(DC_APin));		// DC motor potentiometer
 	
 }
 
@@ -32,12 +32,13 @@ void loop()
 void servo_control(int value)
 {
 	// map(value, 현재 최소값, 현재 최대값, 변경하고자 하는 최소 값, 변경하고자 하는 최대값)
-	int angle = map(value, 0, 1023, 0, 170); // 읽어들인 값을 0에서 179까지 변환   
+	int angle = map(value, 0, 1023, 0, 170); // 읽어들인 값을 0에서 170까지 변환   
 
 	myServo.write(angle);
 	delay(15);
 }
 
+// DC모터 제어
 void DC_control(int value)
 {
 	int motor = map(value, 0, 1023, 0, 255);
