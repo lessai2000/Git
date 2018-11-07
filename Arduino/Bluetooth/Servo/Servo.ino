@@ -32,7 +32,7 @@ void loop()
 void servo_control(int value)
 {
 	// map(value, 현재 최소값, 현재 최대값, 변경하고자 하는 최소 값, 변경하고자 하는 최대값)
-	int angle = map(value, 0, 1023, 0, 179); // 읽어들인 값을 0에서 179까지 변환   
+	int angle = map(value, 0, 1023, 0, 170); // 읽어들인 값을 0에서 179까지 변환   
 
 	myServo.write(angle);
 	delay(15);
